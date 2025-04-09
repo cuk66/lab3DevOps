@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 75px;
+    background-color: lightblue;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: chocolate;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-offset {
+    height: 100px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.messages {
+    padding: 5px;
+}
+
+.messages li {
+    list-style-type: none;
+}
+
+.messages li.info {
+    color: blueviolet;
+}
+
+.messages li.warning {
+    color: orange;
+}
+
+.messages li.success {
+    color: green;
+}
+
+.messages li.error {
+    color: crimson;
+}
+
+.size_formatter {
+    margin-left: 25px;
+    border: none;
+}
+
+.size_formatter:before {
+    width: 25px;
+    height: 25px;
+    content: "> ";
+}
+
+.size_formatter.clicked:before {
+    content: "< " !important;
+}

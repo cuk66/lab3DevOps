@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href='{% static 'user_profile/css/profile_base.css' %}?{{reload}}'>
+{#    {% block profile_head %}#}
+{#    {% endblock %}#}
+{% endblock %}
+{% block container %}
+    <div class="profile-container">
+        {% include "include/messages.html" %}
+        user_id: {{user.id}}
+        <div class="profile-head">
+            <div class="profile-icon">
+                {% if has_image %}
+                <img class="profile-icon" src="{% static 'user_profile/img/profile_images/' %}{{user.id}}.png?{{ reload }}" alt="">
+                {% else %}
+                <img class="profile-icon" src="{% static 'user_profile/img/default.png' %}" alt="">
+                {% endif %}
+            </div>
+            {% block profile_head %}
+            {% endblock %}
+        </div>
+        <div class="profile-body">
+            {% block profile %}
+            {% endblock %}
+        </div>
+        <div class="profile-end mt-5">
+            {% block profile_end %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
